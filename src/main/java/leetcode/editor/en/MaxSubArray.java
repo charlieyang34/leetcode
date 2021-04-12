@@ -2,16 +2,17 @@ package leetcode.editor.en;
 
 public class MaxSubArray {
 
-    public int maxSubArray(int[] nums){
+    public int maxSubArray(int[] array){
+        int cur = array[0];
+        int max = array[0];
 
-        int cur = nums[0];
-        int max = nums[0];
-
-        for (int i = 1; i < nums.length; i++){
-            cur = Math.max(nums[i], cur+nums[i]);
-            max = Math.max(cur, max);
-
+        for (int i = 1; i < array.length; i++){
+           cur = Math.max(array[i], cur + array[i]);
+           max = Math.max(cur, max);
         }
+
         return max;
     }
+
 }
+

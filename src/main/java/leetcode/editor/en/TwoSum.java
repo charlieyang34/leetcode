@@ -6,18 +6,18 @@ public class TwoSum {
 
     public int[] twoSum(int[] array, int target){
 
-        int[] res = new int[2];
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> map =  new HashMap<>();
+        int[] result = new int[2];
 
         for (int i = 0; i < array.length; i++){
             int remain = target - array[i];
             if (map.containsKey(remain)){
-                res[0] = map.get(remain);
-                res[1] = i;
+                result[0] = map.get(remain);
+                result[1] = i;
             }else{
                 map.put(array[i], i);
             }
         }
-        return res;
+        return result;
     }
 }
